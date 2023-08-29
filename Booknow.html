@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9"
+      crossorigin="anonymous">
+    <style>
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+/* Style inputs */
+input[type=text] {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  margin-top: 6px;
+  margin-bottom: 16px;
+  resize: vertical;
+}
+
+.input-field {
+            width: 100%;
+            padding: 10px;
+            text-align: center;
+        }
+
+input[type=submit] {
+  background-color:darkslategrey;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  cursor: pointer;
+}
+
+input[type=submit]:hover {
+  background-color: #45a049;
+}
+
+/* Style the container/contact section */
+.container {
+  border-radius: 5px;
+  background-color: #f2f2f2;
+  
+}
+.input-container{
+    width: 100%;
+            margin-bottom: 20px;
+  
+}
+.container i{
+       
+           position: absolute;
+        }
+        .icon {
+            padding: 20px;
+            color: green;
+            min-width: 50px;
+            text-align: center;}
+
+/* Create two columns that float next to eachother */
+.column {
+  float: left;
+  width: 50%;
+  margin-top: 6px;
+  padding: 20px;
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Responsive layout - when the screen is less than 600px wide, make the two columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 600px) {
+  .column, input[type=submit] {
+    width: 100%;
+    margin-top: 0;
+  }
+}
+/* Popup window */
+.popup {
+  display: none;
+  position: fixed;
+  padding: 10px;
+  width: 100%;
+  height: auto;
+  left: 10%;
+  right: 10%;
+  margin-left: -150px;
+  height: auto;
+  top: 20%;
+  margin-top: -100px;
+  background: #FFF;
+  border: 3px solid #F04A49;
+  z-index: 20;
+}
+
+#popup:after {
+  position: fixed;
+  content: "";
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background: rgba(0,0,0,0.5);
+  z-index: -2;
+}
+
+#popup:before {
+  position: absolute;
+  content: "";
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background: #FFF;
+  z-index: -1;
+}
+
+
+/* Styling buttons & webpage */
+
+body {
+  background: offwhite;
+  font-family: Arial, sans-serif;
+  text-align: center;
+}
+
+button {
+    margin-top: 50px;
+    background-color: rgba(255,255,255,0.3);
+    border: 3px solid #494646;
+    color: #2ca859;
+    font-size: 25px;
+    padding: 10px 20px;
+    
+}
+
+button:hover {
+    background-color: #2a2626;
+    color: #FFF;
+    border: 3px solid #373434;
+    transition: all 0.3s ease 0s;
+}
+
+p {
+	margin: 1em 0;
+  font-size: 16px;
+}
+
+</style>
+  </head>
+  <body>
+
+    <div class="container">
+      <div style="text-align:center">
+        <h2>Book Site tour</h2>
+
+      </div>
+      <div class="row">
+        <div class="column">
+          <img src="./Reources/Images/Untitled-1 2.jpg"
+            style="width:100%" alt="logoimg">
+        </div>
+        <div class="column">
+          <form action="#" method="post" id="form1">
+            <div class="input-container">
+              <i
+                class="fa fa-user icon"></i>
+              <input class="input-field" type="text"
+                placeholder="Full Name" name="name" id="name">
+            </div>
+
+            <div class="input-container">
+              <i class="fa fa-envelope icon"></i>
+              <input class="input-field" type="text"
+                placeholder="Email" name="email" id="email">
+            </div>
+
+            <div class="input-container">
+              <i class="fa fa-phone icon"></i>
+              <input class="input-field" type="text"
+                placeholder="Contact" name="contact" id="contact">
+            </div>
+            <input name="secret" type="hidden" />
+          </form>
+          <button type="submit" class="button" id="jsonbtn"
+            style="text-align: center; width: 100%;"
+            onclick="show('popup')">Book Now</button>
+
+          <div class="popup" id="popup">
+
+            <div class="container">
+              <img src="./Reources/Images/LOGO.jfif"
+                style="max-height: 80px; max-width: 350px; float: left;"
+                alt="logo">
+              <p style="float: right;">+91-8197883993</p>
+              <div style="text-align:center">
+                <h2>Book Site tour</h2>
+
+              </div>
+              <div class="row">
+                <div class="column">
+                  <img
+                    src="./Reources/Images/Untitled-1 2.jpg"
+                    style="width:100%" alt="logoimg">
+                </div>
+                <div class="column">
+                  <h2>Thanks for registering! </h2>
+                  <p>Our experts will get in touch with
+                    you shortly</p>
+
+                  <a role="button" href="#" class="btn btn-dark"
+                    style="text-align: center; width: 100%; background-color: darkslategray;"
+                    onclick="hide('popup')">Back to
+                    Homepage</a>
+
+                </div>
+
+              </div>
+              <section class="container-fluid">
+                <h4>Disclamer</h4>
+                <p>This is not the official website of developer, it belongs to
+                  the authorised channel partner for information & marketing
+                  purposes only. All rights for logo & images are reserved by
+                  the developer.</p>
+                <p>Digital Media planned by <b>Propacity.</b></p>
+              </section>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <script>
+      $ = function(id) {
+    return document.getElementById(id);
+  }
+  
+  var show = function(id) {
+      $(id).style.display ='block';
+  }
+  var hide = function(id) {
+      window.open("index.html");
+  }
+  
+
+  
+
+    </script>
+  </body>
+</html>
